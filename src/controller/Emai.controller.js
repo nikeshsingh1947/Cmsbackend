@@ -1,11 +1,11 @@
 const express = require("express");
-const Menue = require("../models/menue.model");
+const Email = require("../models/Email.model");
 
 const router = express.Router();
 router.get("", async (req, res) => {
   try {
-    const menue = await Menue.find().lean().exec();
-    return res.status(200).send(menue);
+    const email = await Email.find().lean().exec();
+    return res.status(200).send(email);
   } catch (err) {
     return res.status(500).send({ message: err.message });
   }
@@ -13,8 +13,8 @@ router.get("", async (req, res) => {
 
 router.post("", async (req, res) => {
   try {
-    const menue = await Menue.create(req.body);
-    return res.status(200).send(menue);
+    const email = await Email.create(req.body);
+    return res.status(200).send(email);
   } catch (err) {
     return res.status(500).send({ message: err.message });
   }
