@@ -14,7 +14,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.use("/users", usersController);
 app.post("/adminregister", adminregister);
 app.post("/adminlogin", adminlogin);
